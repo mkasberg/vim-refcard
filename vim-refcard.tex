@@ -1,0 +1,165 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage[landscape]{geometry}
+\usepackage{url}
+
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Set margins
+\geometry{top=.5in,left=.5in,right=.5in,bottom=.5in}
+ 
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\textbf{Vim Reference Card}}\\
+\end{center}
+
+\section{Starting Vim}
+\begin{tabular}{@{}ll@{}}
+\verb|vi| \textit{filename} & Open \textit{filename} in Vim\\
+\verb|vi +| \textit{filename} & Open \textit{filename} at EOF\\
+\end{tabular}
+
+\section{Leaving Vim}
+\begin{tabular}{@{}ll@{}}
+\verb|:x| & Save changes and exit\\
+\verb|:q!| & Quit without saving\\
+\end{tabular}
+
+\section{Getting Help}
+\begin{tabular}{@{}ll@{}}
+\verb|:help| & Show help screen\\
+\verb|:help |$x$ & Help for command $x$\\
+\end{tabular}
+
+\section{Files}
+\begin{tabular}{@{}ll@{}}
+\verb|:e| \textit{filename} & Edit \textit{filename} in new buffer\\
+\verb|:w| \textit{filename} & Write (save as) \textit{filename}\\
+\verb|:e!| & Discard unsaved changes\\
+\end{tabular}
+
+\section{Moving Around}
+\begin{tabular}{@{}ll@{}}
+\verb|h j k l| & $\leftarrow$ $\downarrow$ $\uparrow$ $\rightarrow$\\
+\verb|g|\textit{direction} & Move one display line in \textit{direction}\\
+\verb|w| & Start of next word\\
+\verb|e| & End of next word\\
+\verb|b| & Back a word\\
+\verb|1G| & Go to first line\\
+\verb|G| & Go to last line\\
+$n$\verb|G| or \verb|:|$n$ & Go to line $n$\\
+\verb|%| & Matching parenthesis
+\end{tabular}
+
+\section{Inserting Text}
+\begin{tabular}{@{}ll@{}}
+\verb|i| & Insert mode \\
+\verb|o| & New line below current\\
+\verb|Esc| & Exit insert mode\\
+\verb|u| & Undo\\
+\verb|Ctrl + r| & Redo\\
+\verb|.| & Repeat last command\\
+\end{tabular}
+
+\section{Moving Text}
+\begin{tabular}{@{}ll@{}}
+\verb|v| & Visual selection mode\\
+\verb|Ctrl + v| & Block visual mode\\
+\verb|I| & Insert before cursor\\
+\verb|y| & Yank (copy) text\\
+\verb|yy| & Yank entire line\\
+\verb|x| & Kill char under cursor\\
+\verb|d|$m$ & Kill text for movement $m$\\
+\verb|dd| & Kill entire line\\
+\verb|D| & Kill line after cursor\\
+\verb|>| & Shift right\\
+\verb|<| & Shift left\\
+\verb|p| & Paste
+\end{tabular}
+
+\section{Searching}
+\begin{tabular}{@{}ll@{}}
+\verb!/!\textit{term}    & Search for \textit{term} \\
+\verb!n! & Next match\\
+\verb|N| & Next match backwards\\
+\verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/g| & Substitute \textit{replace} for \textit{query}\\
+\verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/gc| & With confirmation\\
+\end{tabular}
+
+\section{Buffers}
+\begin{tabular}{@{}ll@{}}
+\verb!:e! \textit{filename}    & Edit \textit{filename} in new buffer \\
+\verb|:b| \textit{filename} & Switch to buffer \textit{filename}\\
+\verb|:bn| & Next buffer\\
+\verb|:bp| & Previous buffer\\
+\verb|:bd| & Delete (close) buffer\\
+\verb|Ctrl + wv| & Split window vertically\\
+\verb|Crtl + ww| & Switch windows\\
+\verb|Ctrl + wq| & Quit window\\
+\end{tabular}
+
+\section{Macros}
+\begin{tabular}{@{}ll@{}}
+\verb|q|\textit{letter} & Start recording macro to \textit{letter}\\
+\verb|q| & Stop recording macro\\
+\verb|@|\textit{letter} & Run macro \textit{letter}\\
+\verb|@@| & Run macro again\\
+$n$\verb|@|\textit{letter} & Run $n$ times\\
+\end{tabular}
+
+
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+
+Compiled by Mike Kasberg.\\
+Free to redistribute and modify.
+
+\url{https://github.com/mkasberg/vim-refcard}
+
+\end{multicols}
+\end{document}
