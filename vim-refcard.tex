@@ -105,12 +105,13 @@ $n$\verb|G| or \verb|:|$n$ & Go to line $n$\\
 \end{tabular}
 
 \section{Inserting Text}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{.7\linewidth}@{}}
 \verb|i| & Insert mode \\
 \verb|o| & New line below current\\
 \verb|Esc| & Exit insert mode\\
 \verb|u| & Undo\\
 \verb|Ctrl + r| & Redo\\
+\verb|cw| & Change word under cursor (try with \verb|*|, \verb|n|, and \verb|.|\\
 \verb|.| & Repeat last command\\
 \end{tabular}
 
@@ -131,11 +132,12 @@ $n$\verb|G| or \verb|:|$n$ & Go to line $n$\\
 \end{tabular}
 
 \section{Searching}
-\begin{tabular}{@{}ll@{}}
+\begin{tabular}{@{}lp{.5\linewidth}@{}}
 \verb!/!\textit{term}    & Search for \textit{term} \\
+\verb|*| & Search for word under cursor\\
 \verb!n! & Next match\\
 \verb|N| & Next match backwards\\
-\verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/g| & Substitute \textit{replace} for \textit{query}\\
+\verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/g| & Substitute \textit{replace} for \textit{query} \\
 \verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/gc| & With confirmation\\
 \end{tabular}
 
