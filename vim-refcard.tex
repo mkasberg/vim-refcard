@@ -93,6 +93,9 @@
 \begin{tabular}{@{}ll@{}}
 \verb|h j k l| & $\leftarrow$ $\downarrow$ $\uparrow$ $\rightarrow$\\
 \verb|g|\textit{direction} & Move one display line in \textit{direction}\\
+\verb|0| & Beginning of line\\
+\verb|^| & Beginning of sentence\\
+\verb|$| & End of line\\
 \verb|w| & Start of next word\\
 \verb|e| & End of next word\\
 \verb|b| & Back a word\\
@@ -101,12 +104,15 @@
 \verb|1G| & Go to first line\\
 \verb|G| & Go to last line\\
 $n$\verb|G| or \verb|:|$n$ & Go to line $n$\\
-\verb|%| & Matching parenthesis
+\verb|%| & Matching parenthesis\\
+\verb|m|$a$ & Set mark $a$\\
+\verb|'|$a$ & Goto mark $a$\\
 \end{tabular}
 
 \section{Inserting Text}
 \begin{tabular}{@{}lp{.7\linewidth}@{}}
 \verb|i| & Insert mode \\
+\verb|A| & Append to current line\\
 \verb|o| & New line below current\\
 \verb|Esc| & Exit insert mode\\
 \verb|u| & Undo\\
@@ -135,6 +141,7 @@ $n$\verb|G| or \verb|:|$n$ & Go to line $n$\\
 \begin{tabular}{@{}lp{.5\linewidth}@{}}
 \verb!/!\textit{term}    & Search for \textit{term} \\
 \verb|*| & Search for word under cursor\\
+\verb|#| & Search backwards for word under cursor\\
 \verb!n! & Next match\\
 \verb|N| & Next match backwards\\
 \verb|:%s/|\textit{query}\verb|/|\textit{replace}\verb|/g| & Substitute \textit{replace} for \textit{query} \\
