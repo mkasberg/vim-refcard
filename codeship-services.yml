@@ -1,8 +1,8 @@
 version: '3'
 
-builder:
-    image: tianon/latex:latest
-    command: pdflatex /build/vim-refcard.tex
-    volumes:
-        - ./:/build
+services:
+    builder:
+        image: tianon/latex:latest
+        volumes:
+            - ./:/build
         
