@@ -1,5 +1,5 @@
 - name: build_pdf
   tag: codeship
   service: builder
-  command: "ls"
+  command: ["ls", "/build"]
   
