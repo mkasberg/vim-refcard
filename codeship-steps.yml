@@ -1,0 +1,5 @@
+- name: build_pdf
+  tag: codeship
+  service: builder
+  command: pdflatex /builder/vim-refcard.tex
+  
