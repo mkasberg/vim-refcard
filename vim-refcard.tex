@@ -177,6 +177,22 @@ $n$\verb|@|\textit{letter} & Run $n$ times\\
 \verb|:%!| \textit{command} & Pipe entire file through \textit{command}\\
 \end{tabular}
 
+\section{$\sim$/.Vimrc}
+\scriptsize
+\begin{verbatim}
+" Use 4 spaces for a tab.
+set softtabstop=4 shiftwidth=4 expandtab
+
+" Use colors for a dark terminal background
+set background=dark
+
+" Enhanced tab completion
+set wildmenu
+
+" Git commit spellcheck, width
+autocmd Filetype gitcommit setlocal spell textwidth=72
+\end{verbatim}
+
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
